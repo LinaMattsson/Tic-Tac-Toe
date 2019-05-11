@@ -1,12 +1,11 @@
 package org.androidcourse.tictactoe
 
-import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
-import android.widget.Toast
+
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.random.Random
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -166,6 +165,7 @@ class MainActivity : AppCompatActivity() {
                 }}
             }
         }
+        //try to stop enemy from winning
         tryStop@ for (i in 1..9){
             when(i){
                 1->{if(field1Value==NO_VALUE){
@@ -233,15 +233,38 @@ class MainActivity : AppCompatActivity() {
                 }}
             }
         }
-        //stop enemy from win
-
-
         // take middle square
         if (field5Value == NO_VALUE) {
             field5.setBackgroundResource(R.drawable.o)
         }
-
         //strategic
+        if(field1Value==NO_VALUE||field3Value==NO_VALUE||field6Value==NO_VALUE||field9Value==NO_VALUE){
+            var random = Random.nextInt()
+            tryCorner@ for(i in 1..4) {
+                when(random%4){
+                    1->{if(field1Value==NO_VALUE){
+                        field1.setBackgroundResource(R.drawable.o)
+                        field1Value==VALUE_O
+                        break@tryCorner
+                    }}
+                    2->{if(field3Value==NO_VALUE){
+                        field3.setBackgroundResource(R.drawable.o)
+                        field3Value==VALUE_O
+                        break@tryCorner
+                    }}
+                    3->{if(field7Value==NO_VALUE){
+                        field7.setBackgroundResource(R.drawable.o)
+                        field7Value==VALUE_O
+                        break@tryCorner
+                    }}
+                    4->{if(field9Value==NO_VALUE){
+                        field9.setBackgroundResource(R.drawable.o)
+                        field9Value==VALUE_O
+                        break@tryCorner
+                    }}
+                }
+            }
+        }
         //random god square
 
     }
