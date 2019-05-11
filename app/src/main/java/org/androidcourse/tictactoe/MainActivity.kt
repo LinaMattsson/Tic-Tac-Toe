@@ -37,63 +37,81 @@ class MainActivity : AppCompatActivity() {
             if (field1Value == NO_VALUE) {
                 field1.setBackgroundResource(R.drawable.x)
                 field1Value = VALUE_X
+                checkWin()
                 doMove()
+                checkWin()
             }
         }
         field2.setOnClickListener {
             if (field2Value == NO_VALUE) {
                 field2.setBackgroundResource(R.drawable.x)
                 field2Value = VALUE_X
+                checkWin()
                 doMove()
+                checkWin()
             }
         }
         field3.setOnClickListener {
             if (field3Value == NO_VALUE) {
                 field3.setBackgroundResource(R.drawable.x)
                 field3Value = VALUE_X
+                checkWin()
                 doMove()
+                checkWin()
             }
         }
         field4.setOnClickListener {
             if (field4Value == NO_VALUE) {
                 field4.setBackgroundResource(R.drawable.x)
                 field4Value = VALUE_X
+                checkWin()
                 doMove()
+                checkWin()
             }
         }
         field5.setOnClickListener {
             if (field5Value == NO_VALUE) {
                 field5.setBackgroundResource(R.drawable.x)
                 field5Value = VALUE_X
+                checkWin()
                 doMove()
+                checkWin()
             }
         }
         field6.setOnClickListener {
             if (field6Value == NO_VALUE) {
                 field6.setBackgroundResource(R.drawable.x)
                 field6Value = VALUE_X
+                checkWin()
                 doMove()
+                checkWin()
             }
         }
         field7.setOnClickListener {
             if (field7Value == NO_VALUE) {
                 field7.setBackgroundResource(R.drawable.x)
                 field7Value = VALUE_X
+                checkWin()
                 doMove()
+                checkWin()
             }
         }
         field8.setOnClickListener {
             if (field8Value == NO_VALUE) {
                 field8.setBackgroundResource(R.drawable.x)
                 field8Value = VALUE_X
+                checkWin()
                 doMove()
+                checkWin()
             }
         }
         field9.setOnClickListener {
             if (field9Value == NO_VALUE) {
                 field9.setBackgroundResource(R.drawable.x)
                 field9Value = VALUE_X
+                checkWin()
                 doMove()
+                checkWin()
             }
         }
     }
@@ -277,32 +295,129 @@ class MainActivity : AppCompatActivity() {
                 when(random%4){
                     1->{if(field2Value==NO_VALUE){
                         field2.setBackgroundResource(R.drawable.o)
-                        field2Value==VALUE_O
+                        field2Value=VALUE_O
                         return
                     }}
                     2->{if(field4Value==NO_VALUE){
                         field4.setBackgroundResource(R.drawable.o)
-                        field4Value==VALUE_O
+                        field4Value=VALUE_O
                         return
                     }}
                     3->{if(field6Value==NO_VALUE){
                         field6.setBackgroundResource(R.drawable.o)
-                        field6Value==VALUE_O
+                        field6Value=VALUE_O
                         return
                     }}
                     4->{if(field8Value==NO_VALUE){
                         field8.setBackgroundResource(R.drawable.o)
-                        field8Value==VALUE_O
+                        field8Value=VALUE_O
                         return
                     }}
                 }
                 random++
             }
         }
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("Game over")
-            builder.setMessage("No winner")
-            //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
+        dialogWinner(NO_VALUE)
+        }
+
+
+
+    fun checkWin() {
+        var rowOneHorisontal = (field1Value==field2Value&&field1Value==field3Value&&field1Value!=NO_VALUE)
+        var rowTwoHorisontal =(field4Value==field5Value&&field4Value==field6Value&&field4Value!=NO_VALUE)
+        var rowThreeHorisontal =(field7Value==field8Value&&field7Value==field9Value&&field7Value!=NO_VALUE)
+        var rowOneVertical =(field1Value==field4Value&&field1Value==field7Value&&field1Value!=NO_VALUE)
+        var rowTwoVertical = (field2Value==field5Value&&field2Value==field8Value&&field2Value!=NO_VALUE)
+        var rowThreeVertical = (field3Value==field6Value&&field3Value==field9Value&&field3Value!=NO_VALUE)
+        var diagonalOne =(field1Value==field5Value&&field1Value==field9Value&&field1Value!=NO_VALUE)
+        var diagonalTwo = (field3Value==field5Value&&field3Value==field7Value&&field3Value!=NO_VALUE)
+        var vinner = NO_VALUE
+
+        if(rowOneHorisontal||rowTwoHorisontal||rowThreeHorisontal||rowOneVertical||rowTwoVertical||rowThreeVertical||diagonalOne||diagonalTwo){
+            if(rowOneHorisontal) {
+                if (field1Value == VALUE_X) {
+                    vinner = VALUE_X
+                } else {
+                    vinner = VALUE_O
+                }
+                dialogWinner(vinner)
+                return
+            }
+            if(rowTwoHorisontal) {
+                if (field4Value == VALUE_X) {
+                    vinner = VALUE_X
+                } else {
+                    vinner = VALUE_O
+                }
+                dialogWinner(vinner)
+                return
+            }
+            if(rowThreeHorisontal) {
+                if (field7Value == VALUE_X) {
+                    vinner = VALUE_X
+                } else {
+                    vinner = VALUE_O
+                }
+                dialogWinner(vinner)
+                return
+            }
+            if(rowOneVertical) {
+                if (field1Value == VALUE_X) {
+                    vinner = VALUE_X
+                } else {
+                    vinner = VALUE_O
+                }
+                dialogWinner(vinner)
+                return
+            }
+            if(rowTwoVertical) {
+                if (field2Value == VALUE_X) {
+                    vinner = VALUE_X
+                } else {
+                    vinner = VALUE_O
+                }
+                dialogWinner(vinner)
+                return
+            }
+            if(rowThreeVertical) {
+                if (field3Value == VALUE_X) {
+                    vinner = VALUE_X
+                } else {
+                    vinner = VALUE_O
+                }
+                dialogWinner(vinner)
+                return
+            }
+            if(diagonalOne) {
+                if (field1Value == VALUE_X) {
+                    vinner = VALUE_X
+                } else {
+                    vinner = VALUE_O
+                }
+                dialogWinner(vinner)
+                return
+            }
+            if(diagonalTwo) {
+                if (field3Value == VALUE_X) {
+                    vinner = VALUE_X
+                } else {
+                    vinner = VALUE_O
+                }
+                dialogWinner(vinner)
+                return
+            }
+        }
+    }
+
+    fun dialogWinner(winner: Int){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Game over")
+        if(winner==VALUE_X){        builder.setMessage("YOU WIN")
+        }
+        if(winner==VALUE_O){        builder.setMessage("YOU LOSE")
+        }
+        if(winner==NO_VALUE)        builder.setMessage("NO WINNER")
+        //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
 
 //            builder.setPositiveButton(android.R.string.yes) { dialog, which ->
 //                Toast.makeText(applicationContext,
@@ -318,13 +433,7 @@ class MainActivity : AppCompatActivity() {
 //                Toast.makeText(applicationContext,
 //                    "Maybe", Toast.LENGTH_SHORT).show()
 //            }
-            builder.show()
-            //game end
-        }
-
-
-
-    fun checkWin() {
-
+        builder.show()
+        //game end
     }
 }
