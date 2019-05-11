@@ -2,6 +2,8 @@ package org.androidcourse.tictactoe
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
@@ -104,63 +106,63 @@ class MainActivity : AppCompatActivity() {
                     if((field2Value==VALUE_O&&field3Value==VALUE_O)||(field4Value==VALUE_O&&field7Value==VALUE_O)||(field5Value==VALUE_O&&field9Value==VALUE_O)){
                         field1.setBackgroundResource(R.drawable.o)
                         field1Value=VALUE_O
-                        break@tryWin
+                        return
                     }
                 }}
                 2->{if(field2Value==NO_VALUE){
                     if((field1Value==VALUE_O&&field3Value==VALUE_O)||(field5Value==VALUE_O&&field8Value==VALUE_O)){
                         field2.setBackgroundResource(R.drawable.o)
                         field2Value= VALUE_O
-                        break@tryWin
+                        return
                     }
                 }}
                 3->{if(field3Value==NO_VALUE){
                     if((field1Value==VALUE_O&&field2Value==VALUE_O)||(field5Value==VALUE_O&&field7Value==VALUE_O)||(field6Value==VALUE_O&&field9Value==VALUE_O)){
                         field3.setBackgroundResource(R.drawable.o)
                         field3Value=VALUE_O
-                        break@tryWin
+                        return
                     }
                 }}
                 4->{if(field4Value==NO_VALUE){
                     if((field1Value==VALUE_O&&field7Value==VALUE_O)||(field5Value==VALUE_O&&field6Value==VALUE_O)){
                         field4.setBackgroundResource(R.drawable.o)
                         field4Value=VALUE_O
-                        break@tryWin
+                        return
                     }
                 }}
                 5->{if(field5Value==NO_VALUE){
                     if((field1Value==VALUE_O&&field9Value==VALUE_O)||(field2Value==VALUE_O&&field8Value==VALUE_O)||(field3Value==VALUE_O&&field7Value==VALUE_O)||(field4Value==VALUE_O&&field6Value==VALUE_O)){
                         field5.setBackgroundResource(R.drawable.o)
                         field5Value=VALUE_O
-                        break@tryWin
+                        return
                     }
                 }}
                 6->{if(field6Value==NO_VALUE){
                     if((field3Value==VALUE_O&&field9Value==VALUE_O)||(field4Value==VALUE_O&&field5Value==VALUE_O)){
                         field6.setBackgroundResource(R.drawable.o)
                         field6Value=VALUE_O
-                        break@tryWin
+                        return
                     }
                 }}
                 7->{if(field7Value==NO_VALUE){
                     if((field1Value==VALUE_O&&field4Value==VALUE_O)||(field3Value==VALUE_O&&field5Value==VALUE_O)||(field8Value==VALUE_O&&field9Value==VALUE_O)){
                         field7.setBackgroundResource(R.drawable.o)
                         field7Value=VALUE_O
-                        break@tryWin
+                        return
                     }
                 }}
                 8->{if(field8Value==NO_VALUE){
                     if((field2Value==VALUE_O&&field5Value==VALUE_O)||(field7Value==VALUE_O&&field9Value==VALUE_O)){
                         field8.setBackgroundResource(R.drawable.o)
                         field8Value=VALUE_O
-                        break@tryWin
+                        return
                     }
                 }}
                 9->{if(field9Value==NO_VALUE){
                     if((field1Value==VALUE_O&&field5Value==VALUE_O)||(field3Value==VALUE_O&&field6Value==VALUE_O)||(field7Value==VALUE_O&&field8Value==VALUE_O)){
                         field9.setBackgroundResource(R.drawable.o)
                         field9Value=VALUE_O
-                        break@tryWin
+                        return
                     }
                 }}
             }
@@ -172,63 +174,63 @@ class MainActivity : AppCompatActivity() {
                     if((field2Value==VALUE_X&&field3Value==VALUE_X)||(field4Value==VALUE_X&&field7Value==VALUE_X)||(field5Value==VALUE_X&&field9Value==VALUE_X)){
                         field1.setBackgroundResource(R.drawable.o)
                         field1Value=VALUE_O
-                        break@tryStop
+                        return
                     }
                 }}
                 2->{if(field2Value==NO_VALUE){
                     if((field1Value==VALUE_X&&field3Value==VALUE_X)||(field5Value==VALUE_X&&field8Value==VALUE_X)){
                         field2.setBackgroundResource(R.drawable.o)
                         field2Value= VALUE_O
-                        break@tryStop
+                        return
                     }
                 }}
                 3->{if(field3Value==NO_VALUE){
                     if((field1Value==VALUE_X&&field2Value==VALUE_X)||(field5Value==VALUE_X&&field7Value==VALUE_X)||(field6Value==VALUE_X&&field9Value==VALUE_X)){
                         field3.setBackgroundResource(R.drawable.o)
                         field3Value=VALUE_O
-                        break@tryStop
+                        return
                     }
                 }}
                 4->{if(field4Value==NO_VALUE){
                     if((field1Value==VALUE_X&&field7Value==VALUE_X)||(field5Value==VALUE_X&&field6Value==VALUE_X)){
                         field4.setBackgroundResource(R.drawable.o)
                         field4Value=VALUE_O
-                        break@tryStop
+                        return
                     }
                 }}
                 5->{if(field5Value==NO_VALUE){
                     if((field1Value==VALUE_X&&field9Value==VALUE_X)||(field2Value==VALUE_X&&field8Value==VALUE_X)||(field3Value==VALUE_X&&field7Value==VALUE_X)||(field4Value==VALUE_X&&field6Value==VALUE_X)){
                         field5.setBackgroundResource(R.drawable.o)
                         field5Value=VALUE_O
-                        break@tryStop
+                        return
                     }
                 }}
                 6->{if(field6Value==NO_VALUE){
                     if((field3Value==VALUE_X&&field9Value==VALUE_X)||(field4Value==VALUE_X&&field5Value==VALUE_X)){
                         field6.setBackgroundResource(R.drawable.o)
                         field6Value=VALUE_O
-                        break@tryStop
+                        return
                     }
                 }}
                 7->{if(field7Value==NO_VALUE){
                     if((field1Value==VALUE_X&&field4Value==VALUE_X)||(field3Value==VALUE_X&&field5Value==VALUE_X)||(field8Value==VALUE_X&&field9Value==VALUE_X)){
                         field7.setBackgroundResource(R.drawable.o)
                         field7Value=VALUE_O
-                        break@tryStop
+                        return
                     }
                 }}
                 8->{if(field8Value==NO_VALUE){
                     if((field2Value==VALUE_X&&field5Value==VALUE_X)||(field7Value==VALUE_X&&field9Value==VALUE_X)){
                         field8.setBackgroundResource(R.drawable.o)
                         field8Value=VALUE_O
-                        break@tryStop
+                        return
                     }
                 }}
                 9->{if(field9Value==NO_VALUE){
                     if((field1Value==VALUE_X&&field5Value==VALUE_X)||(field3Value==VALUE_X&&field6Value==VALUE_X)||(field7Value==VALUE_X&&field8Value==VALUE_X)){
                         field9.setBackgroundResource(R.drawable.o)
                         field9Value=VALUE_O
-                        break@tryStop
+                        return
                     }
                 }}
             }
@@ -236,38 +238,91 @@ class MainActivity : AppCompatActivity() {
         // take middle square
         if (field5Value == NO_VALUE) {
             field5.setBackgroundResource(R.drawable.o)
+            field5Value=VALUE_O
+            return
         }
         //strategic
-        if(field1Value==NO_VALUE||field3Value==NO_VALUE||field6Value==NO_VALUE||field9Value==NO_VALUE){
+        if(field1Value==NO_VALUE||field3Value==NO_VALUE||field7Value==NO_VALUE||field9Value==NO_VALUE){
             var random = Random.nextInt()
             tryCorner@ for(i in 1..4) {
                 when(random%4){
                     1->{if(field1Value==NO_VALUE){
                         field1.setBackgroundResource(R.drawable.o)
                         field1Value==VALUE_O
-                        break@tryCorner
+                        return
                     }}
                     2->{if(field3Value==NO_VALUE){
                         field3.setBackgroundResource(R.drawable.o)
                         field3Value==VALUE_O
-                        break@tryCorner
+                        return
                     }}
                     3->{if(field7Value==NO_VALUE){
                         field7.setBackgroundResource(R.drawable.o)
                         field7Value==VALUE_O
-                        break@tryCorner
+                        return
                     }}
                     4->{if(field9Value==NO_VALUE){
                         field9.setBackgroundResource(R.drawable.o)
                         field9Value==VALUE_O
-                        break@tryCorner
+                        return
                     }}
                 }
+                random++
             }
         }
-        //random god square
+        //random god square in middle of side
+        if(field2Value==NO_VALUE||field4Value==NO_VALUE||field6Value==NO_VALUE||field8Value==NO_VALUE){
+            var random = Random.nextInt()
+            trySide@ for(i in 1..4) {
+                when(random%4){
+                    1->{if(field2Value==NO_VALUE){
+                        field2.setBackgroundResource(R.drawable.o)
+                        field2Value==VALUE_O
+                        return
+                    }}
+                    2->{if(field4Value==NO_VALUE){
+                        field4.setBackgroundResource(R.drawable.o)
+                        field4Value==VALUE_O
+                        return
+                    }}
+                    3->{if(field6Value==NO_VALUE){
+                        field6.setBackgroundResource(R.drawable.o)
+                        field6Value==VALUE_O
+                        return
+                    }}
+                    4->{if(field8Value==NO_VALUE){
+                        field8.setBackgroundResource(R.drawable.o)
+                        field8Value==VALUE_O
+                        return
+                    }}
+                }
+                random++
+            }
+        }
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Game over")
+            builder.setMessage("No winner")
+            //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
 
-    }
+//            builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+//                Toast.makeText(applicationContext,
+//                    android.R.string.yes, Toast.LENGTH_SHORT).show()
+//            }
+//
+//            builder.setNegativeButton(android.R.string.no) { dialog, which ->
+//                Toast.makeText(applicationContext,
+//                    android.R.string.no, Toast.LENGTH_SHORT).show()
+//            }
+//
+//            builder.setNeutralButton("Maybe") { dialog, which ->
+//                Toast.makeText(applicationContext,
+//                    "Maybe", Toast.LENGTH_SHORT).show()
+//            }
+            builder.show()
+            //game end
+        }
+
+
 
     fun checkWin() {
 
