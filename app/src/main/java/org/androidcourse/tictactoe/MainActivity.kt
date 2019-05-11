@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
 
     fun setClickListener(){
         field1.setOnClickListener { if(field1IsFree) {field1.setBackgroundResource(R.drawable.x)
-            println("hej")
         field1IsFree = false
         doMove()}}
         field2.setOnClickListener { if(field2IsFree) {field2.setBackgroundResource(R.drawable.x)
