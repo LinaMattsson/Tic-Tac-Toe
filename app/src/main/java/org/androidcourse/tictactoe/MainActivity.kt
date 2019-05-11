@@ -9,15 +9,19 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private var field1IsFree = true
-    private var field2IsFree = true
-    private var field3IsFree = true
-    private var field4IsFree = true
-    private var field5IsFree = true
-    private var field6IsFree = true
-    private var field7IsFree = true
-    private var field8IsFree = true
-    private var field9IsFree = true
+
+    private val VALUE_X = 1
+    private val VALUE_O = 2
+    private val NO_VALUE = 0
+    private var field1Value = NO_VALUE
+    private var field2Value = NO_VALUE
+    private var field3Value = NO_VALUE
+    private var field4Value = NO_VALUE
+    private var field5Value = NO_VALUE
+    private var field6Value = NO_VALUE
+    private var field7Value = NO_VALUE
+    private var field8Value = NO_VALUE
+    private var field9Value = NO_VALUE
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,45 +30,87 @@ class MainActivity : AppCompatActivity() {
         setClickListener()
     }
 
-//    override fun onCreateView(name: String?, context: Context?, attrs: AttributeSet?): View? {
-//
-//
-//
-//
-//
-//        return super.onCreateView(name, context, attrs)
-//    }
 
-    fun setClickListener(){
-        field1.setOnClickListener { if(field1IsFree) {field1.setBackgroundResource(R.drawable.x)
-        field1IsFree = false
-        doMove()}}
-        field2.setOnClickListener { if(field2IsFree) {field2.setBackgroundResource(R.drawable.x)
-        field2IsFree = false
-        doMove()}}
-        field3.setOnClickListener { if(field3IsFree) {field3.setBackgroundResource(R.drawable.x)
-        field3IsFree = false
-        doMove()}}
-        field4.setOnClickListener { if(field4IsFree) {field4.setBackgroundResource(R.drawable.x)
-        field4IsFree = false
-        doMove()}}
-        field5.setOnClickListener { if(field5IsFree) {field5.setBackgroundResource(R.drawable.x)
-        field5IsFree = false
-        doMove()}}
-        field6.setOnClickListener { if(field6IsFree) {field6.setBackgroundResource(R.drawable.x)
-        field6IsFree = false
-        doMove()}}
-        field7.setOnClickListener { if(field7IsFree) {field7.setBackgroundResource(R.drawable.x)
-        field7IsFree = false
-        doMove()}}
-        field8.setOnClickListener { if(field8IsFree) {field8.setBackgroundResource(R.drawable.x)
-        field8IsFree = false
-        doMove()}}
-        field9.setOnClickListener { if(field9IsFree) {field9.setBackgroundResource(R.drawable.x)
-        field9IsFree = false
-        doMove()}}
+    fun setClickListener() {
+        field1.setOnClickListener {
+            if (field1Value == NO_VALUE) {
+                field1.setBackgroundResource(R.drawable.x)
+                field1Value = VALUE_X
+                doMove()
+            }
+        }
+        field2.setOnClickListener {
+            if (field2Value == NO_VALUE) {
+                field2.setBackgroundResource(R.drawable.x)
+                field2Value = VALUE_X
+                doMove()
+            }
+        }
+        field3.setOnClickListener {
+            if (field3Value == NO_VALUE) {
+                field3.setBackgroundResource(R.drawable.x)
+                field3Value = VALUE_X
+                doMove()
+            }
+        }
+        field4.setOnClickListener {
+            if (field4Value == NO_VALUE) {
+                field4.setBackgroundResource(R.drawable.x)
+                field4Value = VALUE_X
+                doMove()
+            }
+        }
+        field5.setOnClickListener {
+            if (field5Value == NO_VALUE) {
+                field5.setBackgroundResource(R.drawable.x)
+                field5Value = VALUE_X
+                doMove()
+            }
+        }
+        field6.setOnClickListener {
+            if (field6Value == NO_VALUE) {
+                field6.setBackgroundResource(R.drawable.x)
+                field6Value = VALUE_X
+                doMove()
+            }
+        }
+        field7.setOnClickListener {
+            if (field7Value == NO_VALUE) {
+                field7.setBackgroundResource(R.drawable.x)
+                field7Value = VALUE_X
+                doMove()
+            }
+        }
+        field8.setOnClickListener {
+            if (field8Value == NO_VALUE) {
+                field8.setBackgroundResource(R.drawable.x)
+                field8Value = VALUE_X
+                doMove()
+            }
+        }
+        field9.setOnClickListener {
+            if (field9Value == NO_VALUE) {
+                field9.setBackgroundResource(R.drawable.x)
+                field9Value = VALUE_X
+                doMove()
+            }
+        }
     }
-    fun doMove(){
+
+    fun doMove() {
+        //take middle square
+        if (field5Value == NO_VALUE) {
+            field5.setBackgroundResource(R.drawable.o)
+        }
+        //try to win
+
+        //stop enemy from win
+        //strategic
+        //random god square
+
+    }
+
+    fun checkWin() {
 
     }
 }
