@@ -23,19 +23,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setClickListener()
     }
 
-    override fun onCreateView(name: String?, context: Context?, attrs: AttributeSet?): View? {
-
-
-
-
-
-        return super.onCreateView(name, context, attrs)
-    }
+//    override fun onCreateView(name: String?, context: Context?, attrs: AttributeSet?): View? {
+//
+//
+//
+//
+//
+//        return super.onCreateView(name, context, attrs)
+//    }
 
     fun setClickListener(){
         field1.setOnClickListener { if(field1IsFree) {field1.setBackgroundResource(R.drawable.x)
+            println("hej")
         field1IsFree = false
         doMove()}}
         field2.setOnClickListener { if(field2IsFree) {field1.setBackgroundResource(R.drawable.x)
@@ -64,6 +66,6 @@ class MainActivity : AppCompatActivity() {
         doMove()}}
     }
     fun doMove(){
-        
+
     }
 }
