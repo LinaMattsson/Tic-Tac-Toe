@@ -40,28 +40,28 @@ class MainActivity : AppCompatActivity() {
             println("hej")
         field1IsFree = false
         doMove()}}
-        field2.setOnClickListener { if(field2IsFree) {field1.setBackgroundResource(R.drawable.x)
+        field2.setOnClickListener { if(field2IsFree) {field2.setBackgroundResource(R.drawable.x)
         field2IsFree = false
         doMove()}}
-        field3.setOnClickListener { if(field3IsFree) {field1.setBackgroundResource(R.drawable.x)
+        field3.setOnClickListener { if(field3IsFree) {field3.setBackgroundResource(R.drawable.x)
         field3IsFree = false
         doMove()}}
-        field4.setOnClickListener { if(field4IsFree) {field1.setBackgroundResource(R.drawable.x)
+        field4.setOnClickListener { if(field4IsFree) {field4.setBackgroundResource(R.drawable.x)
         field4IsFree = false
         doMove()}}
-        field5.setOnClickListener { if(field5IsFree) {field1.setBackgroundResource(R.drawable.x)
+        field5.setOnClickListener { if(field5IsFree) {field5.setBackgroundResource(R.drawable.x)
         field5IsFree = false
         doMove()}}
-        field6.setOnClickListener { if(field6IsFree) {field1.setBackgroundResource(R.drawable.x)
+        field6.setOnClickListener { if(field6IsFree) {field6.setBackgroundResource(R.drawable.x)
         field6IsFree = false
         doMove()}}
-        field7.setOnClickListener { if(field7IsFree) {field1.setBackgroundResource(R.drawable.x)
+        field7.setOnClickListener { if(field7IsFree) {field7.setBackgroundResource(R.drawable.x)
         field7IsFree = false
         doMove()}}
-        field8.setOnClickListener { if(field8IsFree) {field1.setBackgroundResource(R.drawable.x)
+        field8.setOnClickListener { if(field8IsFree) {field8.setBackgroundResource(R.drawable.x)
         field8IsFree = false
         doMove()}}
-        field9.setOnClickListener { if(field9IsFree) {field1.setBackgroundResource(R.drawable.x)
+        field9.setOnClickListener { if(field9IsFree) {field9.setBackgroundResource(R.drawable.x)
         field9IsFree = false
         doMove()}}
     }
