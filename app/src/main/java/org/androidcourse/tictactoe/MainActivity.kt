@@ -102,7 +102,74 @@ class MainActivity : AppCompatActivity() {
         if (field5Value == NO_VALUE) {
             field5.setBackgroundResource(R.drawable.o)
         }
-        //try to win
+        //try to win if 2 in row
+        tryWin@ for (i in 1..9){
+            when(i){
+                1->{if(field1Value==NO_VALUE){
+                    if((field2Value==VALUE_O&&field3Value==VALUE_O)||(field4Value==VALUE_O&&field7Value==VALUE_O)||(field5Value==VALUE_O&&field9Value==VALUE_O)){
+                        field1.setBackgroundResource(R.drawable.o)
+                        field1Value=VALUE_O
+                        break@tryWin
+                    }
+                }}
+                2->{if(field2Value==NO_VALUE){
+                    if((field1Value==VALUE_O&&field3Value==VALUE_O)||(field5Value==VALUE_O&&field8Value==VALUE_O)){
+                        field2.setBackgroundResource(R.drawable.o)
+                        field2Value= VALUE_O
+                        break@tryWin
+                    }
+                }}
+                3->{if(field3Value==NO_VALUE){
+                    if((field1Value==VALUE_O&&field2Value==VALUE_O)||(field5Value==VALUE_O&&field7Value==VALUE_O)||(field6Value==VALUE_O&&field9Value==VALUE_O)){
+                        field3.setBackgroundResource(R.drawable.o)
+                        field3Value=VALUE_O
+                        break@tryWin
+                    }
+                }}
+                4->{if(field4Value==NO_VALUE){
+                    if((field1Value==VALUE_O&&field7Value==VALUE_O)||(field5Value==VALUE_O&&field6Value==VALUE_O)){
+                        field4.setBackgroundResource(R.drawable.o)
+                        field4Value=VALUE_O
+                        break@tryWin
+                    }
+                }}
+                5->{if(field5Value==NO_VALUE){
+                    if((field1Value==VALUE_O&&field9Value==VALUE_O)||(field2Value==VALUE_O&&field8Value==VALUE_O)||(field3Value==VALUE_O&&field7Value==VALUE_O)||(field4Value==VALUE_O&&field6Value==VALUE_O)){
+                        field5.setBackgroundResource(R.drawable.o)
+                        field5Value=VALUE_O
+                        break@tryWin
+                    }
+                }}
+                6->{if(field6Value==NO_VALUE){
+                    if((field3Value==VALUE_O&&field9Value==VALUE_O)||(field4Value==VALUE_O&&field5Value==VALUE_O)){
+                        field6.setBackgroundResource(R.drawable.o)
+                        field6Value=VALUE_O
+                        break@tryWin
+                    }
+                }}
+                7->{if(field7Value==NO_VALUE){
+                    if((field1Value==VALUE_O&&field4Value==VALUE_O)||(field3Value==VALUE_O&&field5Value==VALUE_O)||(field8Value==VALUE_O&&field9Value==VALUE_O)){
+                        field7.setBackgroundResource(R.drawable.o)
+                        field7Value=VALUE_O
+                        break@tryWin
+                    }
+                }}
+                8->{if(field8Value==NO_VALUE){
+                    if((field2Value==VALUE_O&&field5Value==VALUE_O)||(field7Value==VALUE_O&&field9Value==VALUE_O)){
+                        field8.setBackgroundResource(R.drawable.o)
+                        field8Value=VALUE_O
+                        break@tryWin
+                    }
+                }}
+                9->{if(field9Value==NO_VALUE){
+                    if((field1Value==VALUE_O&&field5Value==VALUE_O)||(field3Value==VALUE_O&&field6Value==VALUE_O)||(field7Value==VALUE_O&&field8Value==VALUE_O)){
+                        field9.setBackgroundResource(R.drawable.o)
+                        field9Value=VALUE_O
+                        break@tryWin
+                    }
+                }}
+            }
+        }
 
         //stop enemy from win
         //strategic
