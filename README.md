@@ -1,3 +1,3 @@
 # Tic-Tac-Toe
-classical board game
+classical board game,
 android app
